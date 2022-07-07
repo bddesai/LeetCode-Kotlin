@@ -1,3 +1,5 @@
+package helpers;
+
 class Driver {
 
     public static void main(String[] args) {
@@ -20,7 +22,7 @@ class Driver {
             queue.delete();
         }
 
-        // Stack
+        // helpers.Stack
         Stack stack = new Stack(list);
         stack.push(7);
         stack.push(8);

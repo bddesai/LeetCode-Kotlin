@@ -1,4 +1,6 @@
-package misc;
+package helpers;
+
+import helpers.Node;
 
 public class SinglyCircular {
     //private Node head;

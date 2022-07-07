@@ -1,4 +1,4 @@
-package misc;
+package helpers;
 
 public class Queue {
 

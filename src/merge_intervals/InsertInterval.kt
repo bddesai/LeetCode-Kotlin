@@ -2,13 +2,13 @@ package merge_intervals
 
 // link: https://leetcode.com/problems/insert-interval/
 
-fun main(){
+fun main() {
     val intervals = arrayOf(
         intArrayOf(1, 3),
         intArrayOf(6, 9)
     )
 
-    insert1(intervals, intArrayOf(2,5))!!.forEach {
+    insert1(intervals, intArrayOf(2, 5))!!.forEach {
         println("${it[0]}, ${it[1]}")
     }
 }
@@ -19,7 +19,7 @@ fun insert(intervals: Array<IntArray>, newInterval: IntArray): Array<IntArray> {
     var result = mutableListOf<IntArray>()
 
     // add initial intervals
-    while (i<n && intervals[i][1]  < newStart){
+    while (i < n && intervals[i][1] < newStart) {
         result.add(intervals[i++])
     }
 
@@ -39,7 +39,7 @@ fun insert(intervals: Array<IntArray>, newInterval: IntArray): Array<IntArray> {
 }
 
 fun insert1(intervals: Array<IntArray>, newIntervall: IntArray): Array<IntArray>? {
-    val (STR,END) = listOf(0,1)
+    val (STR, END) = listOf(0, 1)
     var newInterval = newIntervall
 
     //val result: MutableList<IntArray> = ArrayList()

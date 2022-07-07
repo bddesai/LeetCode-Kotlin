@@ -1,3 +1,5 @@
+package misc;
+
 public class ArrayFormation {
 
     public static void main(String[] args) {

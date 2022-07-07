@@ -1,3 +1,4 @@
+package misc;
 
 // Amazon Interview Question
 // https://leetcode.com/discuss/interview-question/762546/
