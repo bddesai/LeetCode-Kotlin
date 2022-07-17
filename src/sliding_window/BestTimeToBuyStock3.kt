@@ -3,11 +3,11 @@ package sliding_window
 // link: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
 
 fun main() {
-    print(maxProfit(intArrayOf(3, 3, 5, 0, 0, 3, 1, 4)))
+    print(maxProfit3(intArrayOf(3, 3, 5, 0, 0, 3, 1, 4)))
     //ans=6
 }
 
-fun maxProfit(prices: IntArray): Int {
+fun maxProfit3(prices: IntArray): Int {
     var (first, second, low, high) = listOf(0, 0, 0, 1)
 
     while (high < prices.size) {
