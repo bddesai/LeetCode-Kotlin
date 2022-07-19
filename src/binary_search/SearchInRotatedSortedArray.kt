@@ -15,7 +15,7 @@ fun search(nums: IntArray, target: Int): Int {
     var end = nums.size -1
 
     while(start <= end) {
-        var mid = start + (end-start) / 2
+        val mid = start + (end-start) / 2
 
         if(nums[mid] == target)
             return mid
