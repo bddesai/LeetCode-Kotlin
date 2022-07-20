@@ -18,13 +18,15 @@ fun main() {
 
     reorderList(a)
 
-    var curr: ListNode? = a
+    printLinkedList(a)
+}
+
+fun printLinkedList(head: ListNode?){
+    var curr = head
     while (curr != null) {
         print("${curr.value} -> ")
         curr = curr.next
     }
-
-
 }
 
 fun reorderList(head: ListNode?): Unit {
