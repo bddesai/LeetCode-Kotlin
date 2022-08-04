@@ -1,24 +1,25 @@
 import java.util.*
-import kotlin.collections.ArrayList
-import java.util.HashSet
 
 fun main(args: Array<String>) {
     val nums = intArrayOf(1, 2, 3)
     println(permute(nums))
 
-    val nums2 = intArrayOf(1,2,2)
-    println(permuteWithRepetition(nums2))
+    val nums2 = intArrayOf(1)
+    println(permute(nums2))
+
+    val nums3 = intArrayOf(1,2,2)
+    println(permuteWithRepetition(nums3))
 }
 
 fun permute(nums: IntArray): List<List<Int>> {
     val result = ArrayList<List<Int>>()
-    permutationHelper(result, nums.toList() as ArrayList<Int>, 0)
+    permutationHelper(result, nums.toMutableList(), 0)
     return result
 }
 
 fun permutationHelper(
         result: ArrayList<List<Int>>,
-        nums: ArrayList<Int>,
+        nums: MutableList<Int>,
         index: Int): ArrayList<List<Int>> {
     if (index == nums.size) {
         result.add(ArrayList<Int>(nums))
@@ -45,8 +46,6 @@ fun permuteWithRepetitionHelper(
         nums: List<Int>,
         index: Int){
 
-
-
     if (index == nums.size) {
         result.add(ArrayList<Int>(nums))
         return
@@ -65,6 +64,4 @@ fun permuteWithRepetitionHelper(
             Collections.swap(nums, index, i)
         }
     }
-
-
 }
