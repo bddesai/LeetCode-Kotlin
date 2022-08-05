@@ -1,3 +1,5 @@
+package recursion;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,12 +45,13 @@ public class N_Queens {
 
         int lastRowIdx = slate.size()-1;
 
-        for (int rowIdx=0; rowIdx < slate.size()-1; rowIdx++) {
+        for (int rowIdx=0; rowIdx < lastRowIdx; rowIdx++) {
 
             if (slate.get(rowIdx) == slate.get(lastRowIdx)) // if placed in same column
                 return true;
 
-            if (Math.abs((slate.get(rowIdx) - slate.get(lastRowIdx))) == Math.abs((lastRowIdx - rowIdx))) // they are on the diagonal
+            if (Math.abs((slate.get(rowIdx) - slate.get(lastRowIdx)))
+                    == Math.abs((lastRowIdx - rowIdx))) // they are on the diagonal
                 return true;
         }
         return false;
