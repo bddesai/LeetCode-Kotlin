@@ -2,6 +2,7 @@ package recursion;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class N_Queens {
 
@@ -47,7 +48,7 @@ public class N_Queens {
 
         for (int rowIdx=0; rowIdx < lastRowIdx; rowIdx++) {
 
-            if (slate.get(rowIdx) == slate.get(lastRowIdx)) // if placed in same column
+            if (Objects.equals(slate.get(rowIdx), slate.get(lastRowIdx))) // if placed in same column
                 return true;
 
             if (Math.abs((slate.get(rowIdx) - slate.get(lastRowIdx)))
