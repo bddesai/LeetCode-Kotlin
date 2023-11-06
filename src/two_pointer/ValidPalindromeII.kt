@@ -7,6 +7,8 @@ fun main() {
     println(isPalindromeII("aba")) // Output: true
     println(isPalindromeII("abca")) // Output: true
     println(isPalindromeII("abc")) // Output: false
+    println(isPalindromeII("rolzor")) // Output: false
+
 }
 
 fun isPalindromeII(s: String): Boolean {
