@@ -34,3 +34,15 @@ fun groupAnagrams(strs: Array<String>): List<List<String>> {
 
     return map.values.toList()
 }
+
+fun groupAnagrams2(strs: Array<String>): List<List<String>> {
+    val resultMap = mutableMapOf<String, MutableList<String>>().apply {
+        strs.forEach { str ->
+            val key = String(str.toCharArray().sortedArray())
+            this.getOrPut(key) { mutableListOf() }.add(str)
+        }
+    }
+
+    val resultList = resultMap.map { it.value }
+    return resultList
+}
