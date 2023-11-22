@@ -45,3 +45,26 @@ fun twoSum(nums: IntArray, target: Int): IntArray? {
 
     return null
 }
+
+fun twoSumSimple(nums: IntArray, target: Int): IntArray {
+
+    var map = mutableMapOf<Int, Int>()
+
+//    for(i in nums.indices){
+//        val complement = target - nums[i]
+//        map[complement]?.let {
+//            return intArrayOf(it, i)
+//        }
+//        map[nums[i]] = i
+//    }
+
+    nums.forEachIndexed { index, num ->
+        val current = map[target - num]
+        current?.let {
+            return intArrayOf(current, index)
+        }
+        map[num] = index
+    }
+
+    return intArrayOf()
+}
