@@ -1,16 +1,30 @@
 package arrays
 
 
-// link: https://leetcode.com/problems/product-of-array-except-self/submissions/
+// link: https://leetcode.com/problems/product-of-array-except-self/
 
 fun main() {
-    productExceptSelf(intArrayOf(1, 2, 3, 4)).forEach {
-        print("$it ")
-    }
-     println(productExceptSelf(intArrayOf(-1, 1, 0, -3, 3)))
+    println(productExceptSelf(intArrayOf(1, 2, 3, 4)).contentToString())
+    println(productExceptSelf(intArrayOf(-1, 1, 0, -3, 3)).contentToString())
 }
 
 fun productExceptSelf(nums: IntArray): IntArray {
+    val res = IntArray(nums.size)
+    var prod = 1
+    for (i in nums.indices) {
+        res[i] = prod
+        prod *= nums[i]
+    }
+    prod = 1
+    for (i in nums.indices.reversed()) {
+        res[i] = res[i] * prod
+        prod = prod * nums[i]
+    }
+    return res
+}
+
+
+fun productExceptSelf2(nums: IntArray): IntArray {
     val len = nums.size
 
     // The left and right arrays as described in the algorithm
