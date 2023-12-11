@@ -8,28 +8,20 @@ fun main() {
 }
 
 fun maxProfit3(prices: IntArray): Int {
-    var (first, second, low, high) = listOf(0, 0, 0, 1)
 
-    while (high < prices.size) {
-        if (high - low > 2) {
-            low = high
-            continue
-        }
+    val n = prices.size
+    if (n <= 1) return 0
 
-        if (prices[high] > prices[low]) {
-            val profit = prices[high] - prices[low]
+    var firstBuy = Int.MIN_VALUE
+    var firstSell = 0
+    var secondBuy = Int.MIN_VALUE
+    var secondSell = 0
 
-            if (profit > second) {
-                first = second
-                second = profit
-            } else if (profit > first) {
-                first = profit
-            }
-        } else {
-            low = high
-        }
-        high++
+    for (price in prices) {
+        firstBuy = maxOf(firstBuy, -price)
+        firstSell = maxOf(firstSell, firstBuy+price)
+        secondBuy = maxOf(secondBuy, firstSell-price)
+        secondSell = maxOf(secondSell, secondBuy+price)
     }
-
-    return first + second
+    return  secondSell
 }
