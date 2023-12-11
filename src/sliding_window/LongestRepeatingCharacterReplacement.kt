@@ -1,5 +1,6 @@
 package sliding_window
 
+// 424. Longest Repeating Character Replacement
 // link: https://leetcode.com/problems/longest-repeating-character-replacement/submissions/
 
 fun main() {
@@ -8,7 +9,7 @@ fun main() {
 }
 
 fun characterReplacement(s: String, k: Int): Int {
-    var map = mutableMapOf<Char, Int>()
+    val map = mutableMapOf<Char, Int>()
 
     var result = 0
     var maxFreq = 0
@@ -18,15 +19,14 @@ fun characterReplacement(s: String, k: Int): Int {
         val c = s[right]
         map[c] = map.getOrDefault(c, 0) + 1
 
-        maxFreq = Math.max(maxFreq, map[c]!!)
+        maxFreq = maxOf(maxFreq, map[c]!!)  // O(1)
 
         while (((right - left + 1) - maxFreq) > k) {
             map[s[left]] = map[s[left]]!! - 1
             left++
         }
-        result = Math.max(result, right - left + 1)
+        result = maxOf(result, right - left + 1)
     }
 
     return result
 }
-
