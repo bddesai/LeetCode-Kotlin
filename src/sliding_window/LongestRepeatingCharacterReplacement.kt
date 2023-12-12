@@ -7,7 +7,7 @@ fun main() {
     println(characterReplacement("ABAB", 2))
     println(characterReplacement("AABABBA", 1))
 }
-// some comment
+
 fun characterReplacement(s: String, k: Int): Int {
     val map = mutableMapOf<Char, Int>()
 
