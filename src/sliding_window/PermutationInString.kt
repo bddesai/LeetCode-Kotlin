@@ -1,12 +1,13 @@
 package sliding_window
 
-// link: https://leetcode.com/problems/permutation-in-string/submissions/
+// 567. Permutation in String
+// link: https://leetcode.com/problems/permutation-in-string/
 
 fun main() {
     println("All test cases must print true")
     println(checkInclusion("ab", "eidbaooo") == true)
     println(checkInclusion("ab", "eidboaoo") == false)
-    println(checkInclusion("hello", "jhsglehosdaheso") == true)
+    println(checkInclusion("hello", "jhsgleholsdaheso") == true)
     println(checkInclusion("a", "ab") == true)
     println(checkInclusion("adc", "dcda") == true)
 }
@@ -18,7 +19,7 @@ fun checkInclusion(s1: String, s2: String): Boolean {
     val s1map = IntArray(26)
     val s2map = IntArray(26)
 
-    for (i in 0 until s1.length) {
+    for (i in s1.indices) {
         s1map[s1[i] - 'a']++
         s2map[s2[i] - 'a']++
     }
