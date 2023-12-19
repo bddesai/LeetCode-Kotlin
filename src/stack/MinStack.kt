@@ -4,7 +4,7 @@ import java.util.*
 
 // 155. Min Stack
 // Link: https://leetcode.com/problems/min-stack
-
+    
 fun main(){
     val stack1 = MinStack()
     stack1.push(-2)
