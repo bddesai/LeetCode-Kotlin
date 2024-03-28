@@ -43,3 +43,5 @@ Contributions are welcome! If you'd like to contribute your own solutions, pleas
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+### Main Contributor
+[Bhavin Desai](https://github.com/bddesai) 
