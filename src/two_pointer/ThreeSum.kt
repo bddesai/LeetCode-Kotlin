@@ -1,16 +1,13 @@
 package two_pointer
 
-import java.util.ArrayList
-import java.util.Arrays
-
-
 // link: https://leetcode.com/problems/3sum/
 
 fun main() {
     // target = 0
-    val list = intArrayOf(-1, 0, 1, 2, -1, -4)
-
-    print(threeSum(list))
+    val list1 = intArrayOf(-1, 0, 1, 2, -1, -4)
+    println(threeSum(list1))
+    val list = intArrayOf(0, 0, 0)
+    println(threeSum(list))
 
 }
 
@@ -28,11 +25,9 @@ fun threeSum(nums: IntArray): List<List<Int>> {
         var j = i + 1
         var k = nums.size - 1
 
-
-
         while (j < k) {
 
-            if(k < nums.size-1 && nums[k] == nums[k+1]){
+            if (k < nums.size - 1 && nums[k] == nums[k + 1]) {
                 k--
                 continue
             }
