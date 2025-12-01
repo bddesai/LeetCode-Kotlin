@@ -5,13 +5,13 @@ package two_pointer
 
 fun main() {
     val arr1 = intArrayOf(0, 0, 1, 1, 1, 2, 2, 3, 3, 4)
-    println(removeDuplicates(arr1))
+    println(removeDuplicatesFromSortedArray(arr1))
 
     val arr2 = intArrayOf(11)
-    println(removeDuplicates(arr2))
+    println(removeDuplicatesFromSortedArray(arr2))
 }
 
-fun removeDuplicates(nums: IntArray): Int {
+fun removeDuplicatesFromSortedArray(nums: IntArray): Int {
     if (nums.isEmpty()) return 0
 
     var count = 1
