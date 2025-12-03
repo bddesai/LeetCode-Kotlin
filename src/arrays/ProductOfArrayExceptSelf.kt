@@ -13,7 +13,7 @@ fun productExceptSelf(nums: IntArray): IntArray {
     var prod = 1
     for (i in nums.indices) {
         res[i] = prod
-        prod *= nums[i]
+        prod = prod * nums[i]
     }
     prod = 1
     for (i in nums.indices.reversed()) {
