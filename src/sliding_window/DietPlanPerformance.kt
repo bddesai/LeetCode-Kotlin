@@ -11,7 +11,6 @@ fun main() {
 }
 
 fun dietPlanPerformance(calories: IntArray, k: Int, lower: Int, upper: Int): Int {
-
     // initialization
     var windowSum = 0
     for (i in 0 until k) windowSum += calories[i]
@@ -22,10 +21,8 @@ fun dietPlanPerformance(calories: IntArray, k: Int, lower: Int, upper: Int): Int
         else -> 0
     }
 
-
     for (i in k until calories.size) {
         windowSum += calories[i] - calories[i - k]
-
         when {
             windowSum > upper -> points++
             windowSum < lower -> points--
